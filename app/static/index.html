@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minimal Map with GeoJSON input</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- Ваши стили -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <!-- Панель ввода GeoJSON -->
+  <div class="control-panel">
+    <details open>
+      <summary class="control-summary">Загрузить GeoJSON</summary>
+      <div class="control-grid">
+        <textarea id="gj-text" placeholder="Вставьте GeoJSON сюда" rows="6" class="monotext"></textarea>
+        <div class="row">
+          <input id="gj-file" type="file" accept="application/geo+json,application/json,.geojson,.json" />
+          <button id="btn-text">Отрисовать из текста</button>
+        </div>
+        <div class="row">
+          <input id="gj-url" type="url" placeholder="https://example.com/data.geojson" class="grow" />
+          <button id="btn-url">Загрузить по URL</button>
+        </div>
+        <div id="msg" class="msg"></div>
+      </div>
+    </details>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Ваш код -->
+  <script src="./app.js"></script>
+</body>
+
+</html>
